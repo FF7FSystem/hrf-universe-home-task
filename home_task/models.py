@@ -85,7 +85,6 @@ class JobPostingStatistics:
         Column("max_days_to_hire", Integer, nullable=False),
         Column("job_postings_count", Integer, nullable=False),
         Column("country_code", String, nullable=True),
-        UniqueConstraint("standard_job_id", "country_code", name="uq_job_country"),
         schema="public",
     )
 
@@ -95,3 +94,4 @@ class JobPostingStatistics:
     max_days_to_hire: int
     job_postings_count: int
     country_code: Optional[str] = None
+
