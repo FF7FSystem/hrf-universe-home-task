@@ -1,5 +1,9 @@
-from pydantic import BaseModel, validator, Field
 from typing import Optional
+
+from pydantic import BaseModel
+from pydantic import Field
+from pydantic import validator
+
 
 class JobPostingStatisticsResponse(BaseModel):
     standard_job_id: str

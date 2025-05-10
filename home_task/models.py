@@ -1,15 +1,12 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    Float,
-    Table,
-BigInteger,
-UniqueConstraint
-)
+from sqlalchemy import BigInteger
+from sqlalchemy import Column
+from sqlalchemy import Float
+from sqlalchemy import Integer
+from sqlalchemy import String
+from sqlalchemy import Table
 from sqlalchemy.orm import registry
 
 mapper_registry = registry()
@@ -78,7 +75,7 @@ class JobPostingStatistics:
     __table__ = Table(
         "job_posting_statistics",
         mapper_registry.metadata,
-        Column('id', BigInteger, primary_key=True, autoincrement=True),
+        Column("id", BigInteger, primary_key=True, autoincrement=True),
         Column("standard_job_id", String, nullable=False),
         Column("average_days_to_hire", Float, nullable=False),
         Column("min_days_to_hire", Integer, nullable=False),
@@ -94,4 +91,3 @@ class JobPostingStatistics:
     max_days_to_hire: int
     job_postings_count: int
     country_code: Optional[str] = None
-
